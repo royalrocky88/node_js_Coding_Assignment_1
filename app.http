@@ -1,0 +1,120 @@
+# API 1
+GET http://localhost:3000/todos/
+Content-Type: application/json
+
+
+#Scenerio---1
+##############
+GET http://localhost:3000/todos/?status=TO%20DO
+Content-Type: application/json
+
+
+#Scenerio---2
+##############
+GET http://localhost:3000/todos/?priority=HIGH
+Content-Type: application/json
+
+
+#Scenerio---3
+##############
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+Content-Type: application/json
+
+
+#Scenerio---4
+##############
+GET http://localhost:3000/todos/?search_q=Buy
+Content-Type: application/json
+
+
+#Scenerio---5
+#############
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+Content-Type: application/json
+
+
+#Scenerio---6
+#############
+GET http://localhost:3000/todos/?category=HOME
+Content-Type: application/json
+
+
+#Scenerio---7
+#############
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+Content-Type: application/json
+
+# API 2
+#############
+GET http://localhost:3000/todos/1/
+Content-Type: application/json
+
+# API 3
+#############
+GET http://localhost:3000/agenda/?date=2021-12-12
+Content-Type: application/json
+
+# API 4
+############
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+    "id": 6,
+    "todo": "Finalize event theme",
+    "priority": "LOW",
+    "status": "TO DO",
+    "category": "HOME",
+    "dueDate": "2021-02-22"
+  }
+
+
+# API 5
+############
+#Scenerio---1
+############
+PUT http://localhost:3000/todos/7/
+Content-Type: application/json
+
+{ "status": "DONE" }
+
+
+#Scenerio---2
+############
+PUT http://localhost:3000/todos/7/
+Content-Type: application/json
+
+{ "priority": "HIGH" }
+
+
+#Scenerio---3
+############
+PUT http://localhost:3000/todos/7/
+Content-Type: application/json
+
+{
+"todo": "Clean the garden"
+}
+
+
+#Scenerio---4
+############
+PUT http://localhost:3000/todos/8/
+Content-Type: application/json
+
+{ "category": "LEARNING" }
+
+
+#Scenerio---5
+############
+PUT http://localhost:3000/todos/8/
+Content-Type: application/json
+
+{ "dueDate": "2021-01-12" }
+
+
+# API 6
+############
+DELETE http://localhost:3000/todos/6/
+Content-Type: application/json
+
